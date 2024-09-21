@@ -15,8 +15,14 @@ services:
     volumes:
       - ./src:/var/www/html:delegated
 
+  mysql:
+    image: mysql:5.7
+    environment:
+      - name=value
+    env_file:
+      - ./env/mysql.env
+
   # ? Services we'll need
-  # mysql:
   # composer:
   # artisan:
   # npm:
